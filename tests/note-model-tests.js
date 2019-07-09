@@ -3,30 +3,7 @@
     var string = "Hello World"
     var note = new Note(string);
 
-    var got = note.text
-    var want = string
-
-    if (got !== want) {
-      throw new Error(`Expected ${want}, got ${got}`)
+    assert.toEqual("Hello World", note.text)
     }
-  };
   testCreateNote();
-})(this);
-
-(function() {
-  function testReturnNote() {
-    var string2 = "Hello JavaScript"
-    var note = new Note(string2);
-
-    var got = note.returnNote()
-    var want = string2
-
-    if (got !== want) {
-      throw new Error(`Expected ${want}, got ${got}`)
-    }
-    // if (note.returnNote() !== "Hello JavaScript") {
-    //   throw new Error(`Expected ${string2}`);
-    // }   
-  };
-  testReturnNote();
 })(this);
