@@ -1,5 +1,3 @@
-import { Note } from "./note-model";
-
 // on load, create the app
 
 window.addEventListener('load', function(){

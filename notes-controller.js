@@ -7,16 +7,18 @@ function NotesController(noteModel, notesView) {
 
 NotesController.prototype = {
   _setup: function() {
+    var self = this
     // set up an event listener for submit events
     window.addEventListener('submit', function(event) {
       // stop the actual submission
       event.preventDefault()
       // create a note
-      var note = new this.noteModel(??)
+      this.console.log(event)
+      var note = new self.noteModel(event.target[0].value)
       // add the note into my list
-      this.notesView.add(note)
+      self.notesView.add(note)
       // update the DOM with the view
-      this.updateDOM()
+      self.updateDOM()
     })
   },
 
